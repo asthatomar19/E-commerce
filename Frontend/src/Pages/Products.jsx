@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./Products.css";
-import { getAllProducts, getProducts } from "../Services/productService";
 import { FaSearch } from "react-icons/fa";
 import Navbar from "../Components/Navbar";
 import LoginModal from "../Components/LoginModal";
 import SignupModal from "../Components/SignupModal";
+import {
+    getAllProducts,
+    getProducts
+} from "../Services/productService";
+import {
+    addToCart
+} from "../Services/cartService"
+import { toast } from "react-toastify";
 
 function Products() {
 
@@ -65,6 +72,16 @@ function Products() {
     const handleQuantityhange = (productId, value) => {
         if (value >= 1) {
             setQuantities((prev) => ({ ...prev, [productId]: value }))
+        }
+    }
+
+    const handleAddToCart = async (productId) => {
+        const quantity = quantities[productId] || 1;
+        try {
+            const res = await addToCart({ productId, quantity })
+            toast.success(res.data.msg);
+        } catch (error) {
+            toast.error(error.response?.data?.msg || "Failed to add to cart");
         }
     }
 
