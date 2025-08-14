@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500&display=swap');
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1ba54;
+  padding: 20px 20px;
+  color: #355E3B;
+  margin: 0;
+  border-radius: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar .navbar-logo {
+  font-size: 28px;
+  font-weight: bolder;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.navbar .navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .navbar-links li a {
+  color: #355E3B;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar .navbar-links li a:hover {
+  color: #C04000;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: overline;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #ffcc00;
+  color: black;
+  border-color: #ffcc00;
+}
+
+.logout-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #e60000;
+}

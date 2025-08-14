@@ -1,0 +1,59 @@
+/*
+(254, 244, 225)	#fef4e1	Soft cream/beige
+(254, 243, 225)	#fef3e1	Light beige
+(253, 243, 225)	#fdf3e1	Pale beige
+(254, 244, 226)	#fef4e2	Off-white with beige tone
+(143, 178, 142)	#8fb28e	Muted green (t-shirt color)
+(247, 222, 187)	#f7debb	Light tan
+(253, 243, 224)	#fdf3e0	Light peach beige
+(241, 186, 84)	#f1ba54	Warm yellow/orange (bag tag)
+(247, 223, 188)	#f7dfbc	Soft peach
+(255, 248, 230)	#fff8e6	Very light crea 
+ */
+
+.page {
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.home-background {
+    background-image: url('../assets/BackgroundImg.png');
+}
+
+.home-background .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    position: absolute;
+    top: 250px;
+    left: 500px;
+}
+
+.home-background .content .account {
+    display: flex;
+    gap: 10px;
+}
+
+.home-background .content .btn {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+
+.home-background .content .btn:hover {
+    background-color: #f7debb;
+    color: black;
+    border-color: #f7debb;
+    text-decoration: none;
+}
