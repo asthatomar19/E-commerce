@@ -10,6 +10,8 @@ import SignupModal from "../Components/SignupModal";
 function AddProducts() {
 
     const token = localStorage.getItem("token")
+    
+    
 
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [showSignupModal, setShowSignupModal] = useState(false);

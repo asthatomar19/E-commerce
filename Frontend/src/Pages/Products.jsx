@@ -6,7 +6,8 @@ import LoginModal from "../Components/LoginModal";
 import SignupModal from "../Components/SignupModal";
 import {
     getAllProducts,
-    getProducts
+    getProducts,
+    deleteProduct
 } from "../Services/productService";
 import {
     addToCart
@@ -82,6 +83,16 @@ function Products() {
             toast.success(res.data.msg);
         } catch (error) {
             toast.error(error.response?.data?.msg || "Failed to add to cart");
+        }
+    }
+
+    const handleDeleteProduct = async (productId) => {
+        try {
+            const res = await deleteProduct(productId);
+            toast.success(res.data.msg);
+            fetchProducts
+        } catch (error) {
+            toast.error(error.response?.data?.msg || "Failed to delete product");
         }
     }
 
@@ -175,7 +186,28 @@ function Products() {
                                     </button>
                                 </div>
                             )}
-
+                            {token && (
+                                <>
+                                    <button
+                                        onClick={() => handleAddToCart(product._id)}
+                                        className="add-to-cart-btn"
+                                    >
+                                        Add to cart
+                                    </button>
+                                    <button
+                                        onClick={() => navigate(`/edit-product/${product._id}`)}
+                                        className="edit-btn"
+                                    >
+                                        Edit Product
+                                    </button>
+                                    <button
+                                        onClick={() => handleDeleteProduct(product._id)}
+                                        className="delete-btn"
+                                    >
+                                        Delete Product
+                                    </button>
+                                </>
+                            )}
                         </div>
                     ))}
                 </div>
